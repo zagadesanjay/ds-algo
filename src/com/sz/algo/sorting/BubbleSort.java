@@ -7,6 +7,7 @@ public class BubbleSort {
 		int arr[] = { 5, 12, 3, 11, 2 };
 
 		for (int i = arr.length - 2; i >= 0; i--) {
+			System.out.println("assd");
 			for (int j = 0; j <= i; j++) {
 				if (arr[j] > arr[j + 1]) {
 					int temp = arr[j];
