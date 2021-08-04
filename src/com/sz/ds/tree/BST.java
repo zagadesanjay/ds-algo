@@ -16,21 +16,33 @@ public class BST {
 		root = insert(root, data);
 	}
 
-	private Node insert(Node root, int data) {
-		if (root == null) {
-			root = getNode(data);
+	private Node insert(Node node, int data) {
+		if (node == null) {
+			node = getNode(data);
 		} else {
-			if (data <= root.data) {
-				root.left = insert(root.left, data);
+			if (data <= node.data) {
+				node.left = insert(node.left, data);
 			} else {
-				root.right = insert(root.right, data);
+				node.right = insert(node.right, data);
 			}
 		}
-		return root;
+		return node;
 	}
 
-	public Node search(int data) {
-		return null;
+	public boolean search(int data) {
+		return search(root, data);
+	}
+	
+	public boolean search(Node root, int data) {
+		
+		if(root == null) return false;
+		if(root.data == data) return true;
+		
+		if(data < root.data) {
+			return search(root.left,data);
+		}else {
+			return search(root.right,data);
+		}
 	}
 
 	
