@@ -12,7 +12,8 @@ public class NQueenProblem {
 //			Arrays.fill(arr, 1);
 
 		// Start column wise
-		solveNQ(board, 0);
+		
+		System.out.println(solveNQ(board, 0));
 
 	}
 
@@ -33,7 +34,7 @@ public class NQueenProblem {
 					return true;
 				}
 				// backtrack if this move does not solve remaining board
-				board[i][col] = 1; // backtrack
+				board[i][col] = 0; // backtrack
 
 			}
 

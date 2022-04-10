@@ -5,15 +5,17 @@ public class MergeSort {
 	public static void main(String[] args) {
 		int arr[] = { 3, 5, 2, 54, 32, 0, 6, 78 };
 		
-		sort(arr, arr.length);
+		sort(arr);
 		
 		for(int a : arr) {
 			System.out.print(a + " ") ;
 		}
 	}
 
-	private static void sort(int arr[], int n) {
+	private static void sort(int arr[]) {
 
+		int n = arr.length;
+		
 		if (n < 2) {
 			return;
 		}
@@ -30,8 +32,8 @@ public class MergeSort {
 			r[i-mid] = arr[i];
 		}
 
-		sort(l, mid);
-		sort(r, n - mid);
+		sort(l);
+		sort(r);
 		merge(arr, l, r);
 
 	}
